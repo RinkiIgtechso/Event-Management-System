@@ -131,3 +131,7 @@ button.control:disabled {
 .validation.invalid {
   height: 30px;
 }
+
+.MuiPaper-root{
+  background-color: #d32f2f !important;
+}
