@@ -30,15 +30,17 @@ function Login() {
       setSpin(false);
       setSpin2(false);
     },1000);
-
-    location.pathname==='/'?document.body.classList.add('body'):document.body.classList.remove('body');
     
   },[username, password]);
+
+  useEffect(()=>{
+    location.pathname==='/'?document.body.classList.add('body'):document.body.classList.remove('body');
+  },[location.pathname])
 
   return (
     <div>
       <div className="card">
-          <img src={logo} />
+          <img src={logo} alt='login-logo' />
           <h2>Sign Up</h2>
           <form className="form">
             <div className="username">
