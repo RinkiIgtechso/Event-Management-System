@@ -31,7 +31,7 @@ function Login() {
       setSpin2(false);
     },1000);
 
-    location.pathname=='/'?document.body.classList.add('body'):document.body.classList.remove('body');
+    location.pathname==='/'?document.body.classList.add('body'):document.body.classList.remove('body');
     
   },[username, password]);
 
