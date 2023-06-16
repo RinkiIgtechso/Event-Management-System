@@ -73,7 +73,7 @@ function Login() {
     <div>
       <div className="card">
           <img src={logo} alt='login-logo' />
-          <h2>Sign Up</h2>
+          <h2>Sign In</h2>
           <Snackbar
             open={open}
             autoHideDuration={6000}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -12,6 +14,7 @@
   font-family: "Euclid Circular A";
   color: #f7f7f7;
   animation: rotate 5s infinite alternate linear;
+  font-family: 'Raleway', sans-serif;
 }
 
 button {
