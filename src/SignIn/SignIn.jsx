@@ -22,7 +22,7 @@ function SignIn() {
 
 
   const handleName = (e)=>{
-    // setSpin(true);
+    setSpin(true);
     setEmail(e.target.value);
   }
 
@@ -106,27 +106,27 @@ function SignIn() {
                 <div className='relative mb-5'>
                     <TextField 
                         id="Email" 
-                        color='primary' 
                         fullWidth 
                         type='email'
                         value={email}
                         label="Email"
                         InputLabelProps={{style : {color : 'rgb(255 255 255 / 30%)',fontFamily:"Raleway, sans-serif"} }} 
-                        sx={{'& fieldset': {borderColor: "transparent",color:"white",background:'#1c1e21'}}} 
+                        sx={{background:'#1c1e21',borderColor:'blue','& fieldset': {color:"white !important",background:'#1c1e21',position:'absolute',zIndex:-1}
+                        }} 
                         onChange={handleName} 
                     />
                     <div style={{visibility:spin?'visible':'hidden',opacity:spin?1:0}} className='cards'></div>
                 </div>
                 <div className='relative mb-5'>
                     <TextField 
-                        id="Password" 
-                        color='primary' 
+                        id="Password"  
                         fullWidth 
                         label="Password"
                         value={password}
                         type='password' 
                         InputLabelProps={{style : {color : 'rgb(255 255 255 / 30%)',fontFamily:"Raleway, sans-serif"} }} 
-                        sx={{'& fieldset': {borderColor: "transparent",color:"white",background:'#1c1e21'}}} 
+                        sx={{background:'#1c1e21',borderColor:'blue','& fieldset': {color:"white !important",background:'#1c1e21',position:'absolute',zIndex:-1}
+                        }} 
                         onChange={handlePassword} 
                     />
                     <div style={{visibility:spin2?'visible':'hidden',opacity:spin2?1:0}} className='cards'></div>

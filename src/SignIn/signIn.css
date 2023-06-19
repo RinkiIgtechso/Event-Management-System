@@ -46,10 +46,13 @@ form input.control::placeholder {
     color: rgb(255 255 255 / 30%);
   }
 
-.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+/* .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
     color:white !important;
     position: relative !important;
     z-index: 9 !important;
     font-family: 'Raleway', sans-serif !important;
-}
+} */
 
+#Email, #Password{
+    color:white !important;
+}
