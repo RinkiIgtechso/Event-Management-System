@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
-import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
-import CloseIcon from '@mui/icons-material/Close';
 import MuiAlert from '@mui/material/Alert';
 import logo from './logo.svg';
 import axios from 'axios';
 import './signIn.css';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
-    console.log(props,22,ref)
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
@@ -61,20 +58,6 @@ function SignIn() {
     }
     setOpen2(false);
   }
-
-  const action = (
-    <React.Fragment>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
-
 
 
   useEffect(()=>{
