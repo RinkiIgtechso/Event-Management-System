@@ -72,7 +72,7 @@ function SignIn() {
 
   return (
     <div className='min-[700px]:max-[768px]:mt-[50%] mt-7'>
-        <div className='w-[320px] mx-auto lg:pt-[60px] md:pt-[30px] xs:pt-[20px] pt-[50px] px-[15px] xs:px-[30px] pb-[32px] rounded-2xl bg-primary-100 text-center transition-all'>
+        <div className='min-[10px]:max-[420px]:w-[320px] w-[400px] mx-auto lg:pt-[60px] md:pt-[30px] xs:pt-[20px] pt-[50px] px-[15px] xs:px-[30px] pb-[32px] rounded-2xl bg-primary-100 text-center transition-all'>
             <img src={logo} alt='login-logo' className='lg:w-[260px] md:w-[200px] w-[220px] mx-auto ' />
             <h2 className='mb-[30px] lg:mt-[30px] mt-[20px] text-4xl text-white font-semibold'>Sign In</h2>
             <Snackbar
