@@ -48,8 +48,8 @@ form input.control::placeholder {
 
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
     color:white !important;
-    position: relative;
-    z-index: 9;
+    position: relative !important;
+    z-index: 9 !important;
     font-family: 'Raleway', sans-serif !important;
 }
 

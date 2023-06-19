@@ -109,6 +109,7 @@ function SignIn() {
                         color='primary' 
                         fullWidth 
                         type='email'
+                        value={email}
                         label="Email"
                         InputLabelProps={{style : {color : 'rgb(255 255 255 / 30%)',fontFamily:"Raleway, sans-serif"} }} 
                         sx={{'& fieldset': {borderColor: "transparent",color:"white",background:'#1c1e21'}}} 
@@ -122,6 +123,7 @@ function SignIn() {
                         color='primary' 
                         fullWidth 
                         label="Password"
+                        value={password}
                         type='password' 
                         InputLabelProps={{style : {color : 'rgb(255 255 255 / 30%)',fontFamily:"Raleway, sans-serif"} }} 
                         sx={{'& fieldset': {borderColor: "transparent",color:"white",background:'#1c1e21'}}} 
