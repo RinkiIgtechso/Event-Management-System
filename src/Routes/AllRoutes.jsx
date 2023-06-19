@@ -1,10 +1,10 @@
 import {Routes,Route} from 'react-router-dom';
-import Login from '../Login/Login';
+import SignIn from '../SignIn/SignIn';
 
 function AllRoutes(){
     return(
         <Routes>
-            <Route path='/' element={<Login />} />
+            <Route path='/' element={<SignIn/>} />
         </Routes>
     )
 }

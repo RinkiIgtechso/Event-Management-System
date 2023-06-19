@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+.body{
+    display: grid;
+    place-items: center;
+    margin: 0;
+    background: #191b1d;
+    color: #f7f7f7;
+    animation: rotate 5s infinite alternate linear;
+    padding: 25px 0px;
+    font-family:'Raleway', sans-serif;
+}
+
+@media screen and (max-width: 360px){
+    .body {
+        padding: 44px 0px;
+    }
+}
+
+@media screen and (max-width:425px){
+    .body{
+        padding:70px 0px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .body{
+        padding: 19px 0px;
+    }
+}
+
+.cards{
+    @apply absolute top-1/4 right-[20px] w-[30px] h-[30px] opacity-100 rounded-[50%] border-[3px] border-secondary-300 border-t-secondary-200 animate-slow duration-[0.3s];
+}
+
+.MuiPaper-root{
+    background-color: #d32f2f !important;
+}
+
+.control{
+    @apply absolute text-sm text-white dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-300 peer-focus:dark:text-gray-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4;
+}
+
+.join{
+    @apply outline-0 w-full h-[56px] py-0 px-[16px] border-0 bg-primary-200 text-primary-300 font-sans text-[1rem] font-semibold text-center tracking-widest rounded-md transform mt-[6px]
+}
+
+form input.control::placeholder {
+    color: rgb(255 255 255 / 30%);
+  }
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    color:white !important;
+    position: relative;
+    z-index: 9;
+    font-family: 'Raleway', sans-serif !important;
+}
+
