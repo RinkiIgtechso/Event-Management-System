@@ -33,9 +33,6 @@
     @apply absolute top-1/4 right-[20px] w-[30px] h-[30px] opacity-100 rounded-[50%] border-[3px] border-secondary-300 border-t-secondary-200 animate-slow duration-[0.3s];
 }
 
-.MuiPaper-root{
-    background-color: #d32f2f !important;
-}
 
 .control{
     @apply absolute text-sm text-white dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-300 peer-focus:dark:text-gray-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4;
