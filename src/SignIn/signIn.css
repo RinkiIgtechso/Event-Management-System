@@ -1,13 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
 .body{
-    display: grid;
-    place-items: center;
+    /* display: grid;
+    place-items: center; */
     margin: 0;
-    background: #191b1d;
+    background: #E6E6E6;
     color: #f7f7f7;
     animation: rotate 5s infinite alternate linear;
-    padding: 25px 0px;
+    font-family:'Raleway', sans-serif;
+}
+
+.body1{
+    margin: 0;
+    background: #E6E6E6;
+    color: #f7f7f7;
     font-family:'Raleway', sans-serif;
 }
 
@@ -30,7 +36,7 @@
 }
 
 .cards{
-    @apply absolute top-1/4 right-[20px] w-[30px] h-[30px] opacity-100 rounded-[50%] border-[3px] border-secondary-300 border-t-secondary-200 animate-slow duration-[0.3s];
+    @apply absolute top-1/2 right-[20px] w-[30px] h-[30px] opacity-100 rounded-[50%] border-[3px] border-secondary-300 border-t-secondary-200 animate-slow duration-[0.3s];
 }
 
 
@@ -44,15 +50,8 @@
 
 form input.control::placeholder {
     color: rgb(255 255 255 / 30%);
-  }
+}
 
-/* .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
-    color:white !important;
-    position: relative !important;
-    z-index: 9 !important;
-    font-family: 'Raleway', sans-serif !important;
-} */
-
-#Email, #Password{
+#Password1, #Password2{
     color:white !important;
 }

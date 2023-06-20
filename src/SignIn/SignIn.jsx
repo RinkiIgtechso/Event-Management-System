@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
-import TextField from '@mui/material/TextField';
 import MuiAlert from '@mui/material/Alert';
 import logo from './logo.svg';
 import axios from 'axios';
+// import Cookies from 'js-cookie';
 import './signIn.css';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -32,17 +32,27 @@ function SignIn() {
     if(email===''){
       setOpen(true);
     }
-    
   }
 
-  const handleSubmit = ()=>{
+  const handleSubmit = async ()=>{
     if(email==='' || password===''){
       setOpen(true);
     }
-    const data ={email, password}
-    axios.post('http://localhost:5000/api/v1/auth/login',data)
-    .then((res)=>{console.log(res);
-        setOpen2(true)})
+    const data ={email, password};
+    const url = "http://localhost:5000/api/v1/auth/login";
+    // const credentials = {withCredentials: true};
+
+    try{
+      await axios.post(url, data)
+      .then((res)=>{
+        console.log(res.data.msg);
+        console.log(res.cookie)
+        setOpen2(true);
+      }) 
+    }catch(err){
+      console.log(err);
+      setOpen(true);
+    }
   }
 
   const handleClose = (event, reason) => {
@@ -69,10 +79,14 @@ function SignIn() {
   },[email, password, location.pathname]);
 
   return (
-    <div className='min-[700px]:max-[768px]:mt-[50%] mt-7'>
-        <div className='min-[10px]:max-[420px]:w-[320px] w-[400px] mx-auto lg:pt-[60px] md:pt-[30px] xs:pt-[20px] pt-[50px] px-[15px] xs:px-[30px] pb-[32px] rounded-2xl bg-primary-100 text-center transition-all'>
+    <div>
+      <div className='pl-7 pt-1'>
+        <img src='/Images/logo.svg' className='w-[100px] h-[45px]' alt='logo' />
+      </div>
+      <div className='grid place-items-center align-middle'>
+        <div className='min-[10px]:max-[420px]:w-[320px] w-[400px] mx-auto lg:pt-[60px] md:pt-[30px] xs:pt-[20px] pt-[15px] px-[15px] xs:px-[30px] pb-[30px] rounded-2xl bg-white transition-all font-sans text-gray-950'>
             <img src={logo} alt='login-logo' className='lg:w-[260px] md:w-[200px] w-[220px] mx-auto ' />
-            <h2 className='mb-[30px] lg:mt-[30px] mt-[20px] text-4xl text-white font-semibold'>Sign In</h2>
+            <h2 className='mb-[30px] lg:mt-[30px] mt-[20px] text-center text-4xl text-black font-semibold'>Sign In</h2>
 
             {/* --- login successfull message --- */}
             <Snackbar
@@ -83,7 +97,7 @@ function SignIn() {
                 // action={action}
                 anchorOrigin={{ "vertical":'top', "horizontal":'right' }}
             >
-                <Alert onClose={handleClose2} severity="success" sx={{ width: '100%' }}>
+                <Alert onClose={handleClose2} severity="success" sx={{ width: '100%',fontSize:"16px",fontFamily:'Raleway, sans-serif'}}>
                     Successfully logged in!
                 </Alert>
             </Snackbar>
@@ -96,7 +110,7 @@ function SignIn() {
                 onClose={handleClose}
                 anchorOrigin={{ "vertical":'top', "horizontal":'right' }}
             >
-                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                <Alert onClose={handleClose} severity="error" sx={{ width: '100%',fontSize:"16px",fontFamily:'Raleway, sans-serif'}}>
                     Please enter correct credentials!
                 </Alert>
             </Snackbar>
@@ -104,38 +118,23 @@ function SignIn() {
 
             <form className='w-full m-0 grid'>
                 <div className='relative mb-5'>
-                    <TextField 
-                        id="Email" 
-                        fullWidth 
-                        type='email'
-                        value={email}
-                        label="Email"
-                        InputLabelProps={{style : {color : 'rgb(255 255 255 / 30%)',fontFamily:"Raleway, sans-serif"} }} 
-                        sx={{background:'#1c1e21',borderColor:'blue','& fieldset': {color:"white !important",background:'#1c1e21',position:'absolute',zIndex:-1}
-                        }} 
-                        onChange={handleName} 
-                    />
+                    <label for='Email' className='text-left w-full text-black font-bold'>Email</label><br/>
+                    <input type='email' value={email} className='w-full bg-transparent border-[1px] border-gray-400 h-[53px] rounded-lg focus:outline-0 pl-4 mt-1 text-lg' id='Email' placeholder='' onChange={handleName} />
                     <div style={{visibility:spin?'visible':'hidden',opacity:spin?1:0}} className='cards'></div>
                 </div>
-                <div className='relative mb-5'>
-                    <TextField 
-                        id="Password"  
-                        fullWidth 
-                        label="Password"
-                        value={password}
-                        type='password' 
-                        InputLabelProps={{style : {color : 'rgb(255 255 255 / 30%)',fontFamily:"Raleway, sans-serif"} }} 
-                        sx={{background:'#1c1e21',borderColor:'blue','& fieldset': {color:"white !important",background:'#1c1e21',position:'absolute',zIndex:-1}
-                        }} 
-                        onChange={handlePassword} 
-                    />
+                <div className='relative'>
+                  <label for='Password' className='text-left w-full text-gray-950 font-bold'>Password</label><br/>
+                  <input type='password' value={password} className='w-full bg-transparent border-[1px] border-gray-400 h-[53px] rounded-lg focus:outline-0 pl-4 mt-1 text-lg' id='Password' placeholder='' onChange={handlePassword} />
                     <div style={{visibility:spin2?'visible':'hidden',opacity:spin2?1:0}} className='cards'></div>
                 </div>
+                <div className='text-right text-sm text-blue-500 mb-4 font-extrabold'><a href="/forgetPassword">Forget Password?</a></div>
                 <button className="join" type="button" onClick={handleSubmit}>
-                    LOGIN
+                  LOGIN
                 </button>
+                
             </form>
         </div>
+      </div>
     </div>
   )
 }
