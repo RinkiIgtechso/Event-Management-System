@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
 .body{
-    /* display: grid;
-    place-items: center; */
     margin: 0;
     background: #E6E6E6;
     color: #f7f7f7;
@@ -50,8 +48,4 @@
 
 form input.control::placeholder {
     color: rgb(255 255 255 / 30%);
-}
-
-#Password1, #Password2{
-    color:white !important;
 }

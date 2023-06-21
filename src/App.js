@@ -1,4 +1,4 @@
-import AllRoutes from "./Routes/AllRoutes";
+import AllRoutes from "./Routes/AllRoutes"
 
 function App() {
   return (

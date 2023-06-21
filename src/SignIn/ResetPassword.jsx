@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
-import TextField from '@mui/material/TextField';
 import MuiAlert from '@mui/material/Alert';
 import './signIn.css';
 
@@ -64,14 +63,12 @@ function ResetPassword() {
     <div className='grid place-items-center align-middle min-h-screen'>
         <div className='w-full'>
             <div className='text-center text-3xl font-bold text-primary-200 mb-7'>Reset Password</div>
-            <div className='bg-primary-100 p-6 min-[10px]:max-[420px]:w-[320px] w-[400px] mx-auto rounded'>
+            <div className='bg-white p-6 min-[10px]:max-[420px]:w-[320px] w-[400px] mx-auto rounded'>
             {/* --- reset password message --- */}
             <Snackbar
                 open={open2}
                 autoHideDuration={6000}
                 onClose={handleClose2}
-                // message="Please enter correct credentials!"
-                // action={action}
                 anchorOrigin={{ "vertical":'top', "horizontal":'right' }}
             >
                 <Alert onClose={handleClose2} severity="success" sx={{ width: '100%',fontSize:"16px",fontFamily:'Raleway, sans-serif'}}>
@@ -88,37 +85,19 @@ function ResetPassword() {
                 anchorOrigin={{ "vertical":'top', "horizontal":'right' }}
             >
                 <Alert onClose={handleClose} severity="error" sx={{ width: '100%',fontSize:"16px",fontFamily:'Raleway, sans-serif'}}>
-                    Please enter correct credentials!
+                    Please enter correct password!
                 </Alert>
-            </Snackbar>
+            </Snackbar> 
             {/* ------ end ----- */}
                 <form className='w-full m-0 grid'>
                     <div className='relative mb-5'>
-                        <TextField 
-                            id="Password1" 
-                            fullWidth 
-                            type='password'
-                            value={password1}
-                            label="New Password"
-                            InputLabelProps={{style : {color : 'rgb(255 255 255 / 30%)',fontFamily:"Raleway, sans-serif"} }} 
-                            sx={{background:'#1c1e21',borderColor:'blue','& fieldset': {color:"white !important",background:'#1c1e21',position:'absolute',zIndex:-1}
-                            }} 
-                            onChange={handlePass1} 
-                        />
+                        <label for='Password1' className='text-left w-full text-gray-950 font-bold'>New Password</label><br/>
+                        <input type='password' value={password1} className='w-full bg-transparent border-[1px] border-gray-400 h-[53px] rounded-lg focus:outline-0 pl-4 mt-1 text-black text-lg' id='Password1' placeholder='' onChange={handlePass1} />
                         <div style={{visibility:spin?'visible':'hidden',opacity:spin?1:0}} className='cards'></div>
                     </div>
                     <div className='relative mb-5'>
-                        <TextField 
-                            id="Password2" 
-                            fullWidth 
-                            type='password'
-                            value={password2}
-                            label="Confirm Password"
-                            InputLabelProps={{style : {color : 'rgb(255 255 255 / 30%)',fontFamily:"Raleway, sans-serif"} }} 
-                            sx={{background:'#1c1e21',borderColor:'blue','& fieldset': {color:"white !important",background:'#1c1e21',position:'absolute',zIndex:-1}
-                            }} 
-                            onChange={handlePass2} 
-                        />
+                        <label for='Password2' className='text-left w-full text-gray-950 font-bold'>Confirm Password</label><br/>
+                        <input type='password' value={password2} className='w-full bg-transparent border-[1px] border-gray-400 h-[53px] rounded-lg focus:outline-0 pl-4 mt-1 text-black text-lg' id='Password2' placeholder='' onChange={handlePass2} />
                         <div style={{visibility:spin2?'visible':'hidden',opacity:spin2?1:0}} className='cards'></div>
                     </div>
                     <button className="join" type="button" onClick={handleSubmit}>

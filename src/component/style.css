@@ -1,0 +1,110 @@
+.css-10d9dml-MuiTabs-indicator{
+    display:none !important;
+}
+
+.css-1n9xcyc-MuiButtonBase-root-MuiTab-root{
+    text-transform: none !important;
+    font-family:'Raleway', sans-serif !important;
+    font-weight:700 !important;
+}
+
+.css-1n9xcyc-MuiButtonBase-root-MuiTab-root.Mui-selected{
+    background-color: #E6F1F8 !important;
+    border-radius: 25px !important;
+    color:#0071BD !important;
+    font-weight:700;
+}
+
+.active{
+    background-color: #E6F1F8 !important;
+    border-radius: 25px !important;
+    color:#0071BD !important;
+    font-weight:700;
+    padding:10px 0px 10px 20px;
+}
+
+.logo{
+    @apply w-[140px] h-[40px] min-[420px]:max-[769px]:w-[100px] min-[420px]:max-[769px]:h-[30px] min-[420px]:max-[769px]:m-3;
+}
+
+.slide {
+    position: absolute;
+    left: -100px; /* SET THE SLIDER TO BE OFFSCREEN INITIALLY */
+    height:100vh;
+    background: blue;
+    transition: 1s;
+    display:block;
+}
+
+.clicked{
+    transition: 1s;
+    left: 0;
+}
+
+#page-wrap {
+    text-align: center;
+    overflow: auto;
+  }
+  
+  .bm-item {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: #d1d1d1;
+    transition: color 0.2s;
+  }
+  
+  .bm-item:hover {
+    color: white;
+  }
+  
+  .bm-burger-button {
+    position: fixed;
+    width: 25px;
+    height: 18px;
+    left: 18px;
+    top: 18px;
+  }
+  
+  .bm-burger-bars {
+    background: #373a47;
+  }
+  
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  
+  .bm-menu {
+    background: white;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+  
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+  
+  .bm-item-list {
+    color: #b8b7ad;
+  }
+  
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .bm-burger-bars {
+    height:2.5px !important;
+    border-radius: 10px;
+  }
+
+  .bm-cross{
+    height:25px !important;
+    width:2px !important;
+  }
+
+ 

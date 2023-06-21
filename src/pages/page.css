@@ -1,0 +1,5 @@
+@media screen and (max-width:425px) {
+    #border{
+        border-right: 1px solid lightgrey;
+    } 
+  }

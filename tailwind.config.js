@@ -8,7 +8,6 @@ module.exports = {
       'xs':"425px"
     },
     extend: {
-      
       colors:{
         primary:{
           100:'#131416',

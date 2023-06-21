@@ -24,7 +24,9 @@ function ForgetPassword() {
     const handleSubmit = (e)=>{
         setOpen(true);
         console.log(email);
-        navigate('/resetPassword', { replace: true })
+        setTimeout(()=>{
+            navigate('/resetPassword', { replace: true })
+        },1500)
     }
 
     const handleClose = (event, reason) => {
@@ -47,7 +49,7 @@ function ForgetPassword() {
     <div className='grid place-items-center align-middle min-h-screen'>
         <div className='w-full'>
             <div className='text-center text-3xl font-bold text-primary-200 mb-7'>Forgot Password</div>
-            <div className='bg-white p-6 min-[10px]:max-[420px]:w-[320px] w-[400px] mx-auto rounded'>
+            <div className='bg-white p-6 min-[10px]:max-[420px]:w-[320px] w-[400px] mx-auto rounded-lg'>
             {/* --- email sent message --- */}
             <Snackbar
                 open={open}
@@ -64,7 +66,7 @@ function ForgetPassword() {
                 <form className='w-full m-0 grid'>
                     <div className='relative mb-5'>
                         <label for='Email' className='text-left w-full text-black font-bold'>Email Address</label><br/>
-                        <input type='email' value={email} className='w-full bg-transparent border-[1px] border-gray-400 h-[53px] rounded-lg focus:outline-0 pl-4 mt-1 text-lg' id='Email' placeholder='' onChange={handleName} />
+                        <input type='email' value={email} className='w-full bg-transparent border-[1px] border-gray-400 h-[53px] rounded-lg focus:outline-0 pl-4 mt-1 text-black text-lg' id='Email' placeholder='' onChange={handleName} />
                         <div style={{visibility:spin?'visible':'hidden',opacity:spin?1:0}} className='cards'></div>
                     </div>
                     <button className="join" type="button" onClick={handleSubmit}>
